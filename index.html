@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body onLoad="renderTime();">
+        <div id="clockDisplay" class="time"></div>
+    <section id="firstMenus">
+        <div class="menus">
+            <div class="menu">
+                <div class="card">
+                    <a href="majaplaan.html">
+                    <h1>Korruseplaanid</h1>
+                    <img src="./img/TTK.JPG" class="card-img">
+                    </a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="card">
+                    <a href="tunniplaan.html">
+                    <h1>Tunniplaan</h1>
+                    <img src="./img/timetable.jpg" class="card-img">
+                    </a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="card">
+                    <a href="menyy.html">
+                    <h1>Kohviku men&uuml;&uuml;</h1>
+                    <img src="./img/kohvik.png" class="card-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="section01" class="demo">
+        <a href="#secondMenus"><span></span>Scroll</a>
+    </section>
+    <section id="secondMenus">
+    <div class="menus2">
+        <div class="menu2">
+            <div class="card">
+                <h1>Info</h1>
+                <img src="./img/info_icon.png" class="card-img">
+            </div>
+        </div>
+        <div class="menu2">
+            <div class="card">
+                <h1>Enesetunne</h1>
+                <img src="./img/happy.png" class="card-img">
+            </div>
+        </div>
+        <div class="menu2">
+            <div class="card">
+                <h1>Külalisteraamat</h1>
+                <a href="menyy.html">
+                <img src="./img/4744716018893_3.jpg" class="card-img">
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+    </section>
+    <script>
+        //enter refresh time in "minutes:seconds" Minutes should range from 0 to inifinity. Seconds should range from 0 to 59
+        var limit="00:59"
+        
+        if (document.images){
+        var parselimit=limit.split(":")
+        parselimit=parselimit[0]*60+parselimit[1]*1
+        }
+        function beginrefresh(){
+        if (!document.images)
+        return
+        if (parselimit==1)
+        window.location.href="?"
+        else{ 
+        parselimit-=1
+        curmin=Math.floor(parselimit/60)
+        cursec=parselimit%60
+        if (curmin!=0)
+        curtime=curmin+" minutes and "+cursec+" seconds left until page refresh!"
+        else
+        curtime=cursec+" seconds left until page refresh!"
+        window.status=curtime
+        setTimeout("beginrefresh()",1000)
+        }
+        }
+        
+        //window.onload=beginrefresh
+        
+        </script>
+    </body>
+    </html>
+
+    
